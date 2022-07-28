@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="width_height">38dp</dimen>
-    <dimen name="width_height_1">35dp</dimen>
     <dimen name="txt_size">18sp</dimen>
     <dimen name="box_margin">1dp</dimen>
+    <dimen name="layout_width">40dp</dimen>
+    <dimen name="layout_height">40dp</dimen>
 </resources>
