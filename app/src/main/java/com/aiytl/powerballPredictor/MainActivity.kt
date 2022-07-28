@@ -1,21 +1,16 @@
 package com.aiytl.powerballPredictor
 
 import android.app.Dialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.ArrayAdapter
 import android.widget.GridLayout
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.aiytl.powerballPredictor.databinding.ActivityMainBinding
 import com.aiytl.powerballPredictor.databinding.LayoutDialogNumbersBinding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : BaseActivity(), View.OnClickListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var dialogBinding: LayoutDialogNumbersBinding
     private lateinit var dialog: Dialog
@@ -123,7 +118,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv1 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -156,7 +152,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv2 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -189,7 +185,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv3 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -222,7 +218,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv4 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -255,7 +251,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv5 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -288,7 +284,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv6 ->{
                 if(Integer.parseInt(binding.tv1First6column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 6 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 6 box.")
                     return
                 }
                 dialog.show()
@@ -321,7 +317,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv7 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -354,7 +350,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv8 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -387,7 +383,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv9 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -420,7 +416,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv10 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -453,7 +449,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv11 ->{
                 if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 5 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 5 box.")
                     return
                 }
                 dialog.show()
@@ -486,7 +482,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.ll_tv12 ->{
                 if(Integer.parseInt(binding.tv1First6column.text.toString()) == 0){
-                    Toast.makeText(this, "First, Select a number from first 6 box.", Toast.LENGTH_SHORT).show()
+                    customToast("First, Select a number from first 6 box.")
                     return
                 }
                 dialog.show()
