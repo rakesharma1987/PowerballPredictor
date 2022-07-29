@@ -97,7 +97,7 @@
         android:gravity="center"
         android:text="Enter the previous 2 winning number\s"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -108,7 +108,8 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
         android:orientation="horizontal"
-        android:weightSum="6">
+        android:weightSum="6"
+        android:layout_marginTop="2dp">
 
         <LinearLayout
             android:id="@+id/ll_tv1"
@@ -403,7 +404,7 @@
         android:background="@color/background_color_line" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview_3column"
+        android:id="@+id/recyclerview_6column"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/banner_adview"
