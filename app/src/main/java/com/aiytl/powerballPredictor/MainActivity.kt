@@ -26,7 +26,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         "71", "72", "73", "74", "75", "76", "77", "78", "79", "80"
     )
     private val listOfFirst6Col = listOf<String>(
-        "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+        "10",
         "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
         "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
         "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"
@@ -132,8 +132,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv1 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
-                    customToast("First, Select a number from first 5 box.")
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -153,8 +152,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv1.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv1.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -166,7 +170,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv2 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -186,8 +190,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv2.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv2.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -199,7 +208,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv3 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -219,8 +228,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv3.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv3.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -232,7 +246,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv4 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -252,8 +266,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv4.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv4.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -265,7 +284,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv5 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -285,8 +304,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv5.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv5.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -298,8 +322,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv6 ->{
-                if(Integer.parseInt(binding.tv1First6column.text.toString()) == 0){
+                if(binding.tv1First6column.text == "-"){
                     customToast("First, Select a number from first 6 box.")
+                    return
+                }
+                else if(binding.tv1.text.toString() == "-" || binding.tv2.text.toString() == "-" || binding.tv3.text.toString() == "-"
+                    || binding.tv4.text.toString() == "-" || binding.tv5.text.toString() == "-"){
+                    customToast("Please select previous box/boxes of this row.")
                     return
                 }
                 dialog.show()
@@ -318,8 +347,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv6.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else{
+                                    binding.tv6.text = list[position]
+                                    selectedNumber.clear()
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -331,7 +365,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv7 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -351,7 +385,11 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }
                                 binding.tv7.text = list[position]
+                                selectedNumber.add(list[position])
                                 dialog.dismiss()
                             }
 
@@ -364,7 +402,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv8 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -384,8 +422,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv8.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv8.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -397,7 +440,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv9 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -417,8 +460,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv9.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv9.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -430,7 +478,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv10 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -450,8 +498,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv10.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv10.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -463,7 +516,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv11 ->{
-                if(Integer.parseInt(binding.tv1First5column.text.toString()) == 0){
+                if(binding.tv1First5column.text == "-"){
                     customToast("First, Select a number from first 5 box.")
                     return
                 }
@@ -483,8 +536,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv11.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv11.text = list[position]
+                                    selectedNumber.add(list[position])
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -496,8 +554,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.ll_tv12 ->{
-                if(Integer.parseInt(binding.tv1First6column.text.toString()) == 0){
+                if(binding.tv1First6column.text == "-"){
                     customToast("First, Select a number from first 6 box.")
+                    return
+                }
+                else if(binding.tv7.text.toString() == "-" || binding.tv8.text.toString() == "-" || binding.tv9.text.toString() == "-"
+                    || binding.tv10.text.toString() == "-" || binding.tv11.text.toString() == "-"){
+                    customToast("Please select previous box/boxes of this row.")
                     return
                 }
                 dialog.show()
@@ -516,8 +579,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
-                                binding.tv12.text = list[position]
-                                dialog.dismiss()
+                                if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
+                                    customToast("Already selected, please select another number.")
+                                }else {
+                                    binding.tv12.text = list[position]
+                                    selectedNumber.clear()
+                                    dialog.dismiss()
+                                }
                             }
 
                             override fun onItemLongClick(view: View?, position: Int) {
@@ -529,6 +597,14 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_gen_2nos -> {
+                if(binding.tv1First5column.text.toString() == "-" || binding.tv1First6column.text.toString() == "-"
+                    || binding.tv1.text.toString() == "-" || binding.tv2.text.toString() == "-" || binding.tv3.text.toString() == "-"
+                    || binding.tv4.text.toString() == "-" || binding.tv5.text.toString() == "-" || binding.tv6.text.toString() == "-"
+                    || binding.tv7.text.toString() == "-" || binding.tv8.text.toString() == "-" || binding.tv9.text.toString() == "-"
+                    || binding.tv10.text.toString() == "-" || binding.tv11.text.toString() == "-" || binding.tv12.text.toString() == "-"){
+                    customToast("Result can't predict, please select number by clicking box.")
+                    return
+                }
                 sumCol17 = Integer.parseInt(binding.tv1.text.toString()).plus(Integer.parseInt(binding.tv7.text.toString()))
                 sumCol28 = Integer.parseInt(binding.tv2.text.toString()).plus(Integer.parseInt(binding.tv8.text.toString()))
                 sumCol39 = Integer.parseInt(binding.tv3.text.toString()).plus(Integer.parseInt(binding.tv9.text.toString()))
@@ -558,11 +634,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 val result612 = powSumDigits612.toString().toCharArray()
 
                 var sixNumberList = ArrayList<SixNumber>()
-                if(result17.size == 1 || result28.size == 1 || result39.size == 1 || result410.size == 1 || result511.size == 1 || result612.size == 1){
-                    customToast("Result can't predict, as one of the column contain zero")
-                    return
-                }
-
                 for (i in 1..2){
                     if (i==1){
                         var sixNumbers = SixNumber(result17[1], result28[2], result39[3], result410[4], result511[5], result612[6])
@@ -580,6 +651,14 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_gen_40nos -> {
+                if(binding.tv1First5column.text.toString() == "-" || binding.tv1First6column.text.toString() == "-"
+                    || binding.tv1.text.toString() == "-" || binding.tv2.text.toString() == "-" || binding.tv3.text.toString() == "-"
+                    || binding.tv4.text.toString() == "-" || binding.tv5.text.toString() == "-" || binding.tv6.text.toString() == "-"
+                    || binding.tv7.text.toString() == "-" || binding.tv8.text.toString() == "-" || binding.tv9.text.toString() == "-"
+                    || binding.tv10.text.toString() == "-" || binding.tv11.text.toString() == "-" || binding.tv12.text.toString() == "-"){
+                    customToast("Result can't predict, please select number by clicking box.")
+                    return
+                }
                 sumCol17 = Integer.parseInt(binding.tv1.text.toString()).plus(Integer.parseInt(binding.tv7.text.toString()))
                 sumCol28 = Integer.parseInt(binding.tv2.text.toString()).plus(Integer.parseInt(binding.tv8.text.toString()))
                 sumCol39 = Integer.parseInt(binding.tv3.text.toString()).plus(Integer.parseInt(binding.tv9.text.toString()))
@@ -608,7 +687,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 val result511 = powSumDigits511.toString().toCharArray()
                 val result612 = powSumDigits612.toString().toCharArray()
                 if(result17.size == 1 || result28.size == 1 || result39.size == 1 || result410.size == 1 || result511.size == 1 || result612.size == 1){
-                    customToast("Result can't predict, as one of the column contain zero")
+                    customToast("Result can't predict, please select number by clicking box.")
                     return
                 }
                 var sixNumberList = ArrayList<SixNumber>()
