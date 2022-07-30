@@ -626,12 +626,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 val powSumDigits511 = BigInteger(sumDigits511.toString()).pow(80)
                 val powSumDigits612 = BigInteger(sumDigits612.toString()).pow(80)
 
-                val result17 = powSumDigits17.toString().toCharArray()
-                val result28 = powSumDigits28.toString().toCharArray()
-                val result39 = powSumDigits39.toString().toCharArray()
-                val result410 = powSumDigits410.toString().toCharArray()
-                val result511 = powSumDigits511.toString().toCharArray()
-                val result612 = powSumDigits612.toString().toCharArray()
+                val result17 = powSumDigits17.toString().replace('0', '1').toCharArray()
+                val result28 = powSumDigits28.toString().replace('0', '1').toCharArray()
+                val result39 = powSumDigits39.toString().replace('0', '1').toCharArray()
+                val result410 = powSumDigits410.toString().replace('0', '1').toCharArray()
+                val result511 = powSumDigits511.toString().replace('0', '1').toCharArray()
+                val result612 = powSumDigits612.toString().replace('0', '1').toCharArray()
 
                 var sixNumberList = ArrayList<SixNumber>()
                 for (i in 1..2){
@@ -680,12 +680,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 val powSumDigits511 = BigInteger(sumDigits511.toString()).pow(80)
                 val powSumDigits612 = BigInteger(sumDigits612.toString()).pow(80)
 
-                val result17 = powSumDigits17.toString().toCharArray()
-                val result28 = powSumDigits28.toString().toCharArray()
-                val result39 = powSumDigits39.toString().toCharArray()
-                val result410 = powSumDigits410.toString().toCharArray()
-                val result511 = powSumDigits511.toString().toCharArray()
-                val result612 = powSumDigits612.toString().toCharArray()
+                val result17 = powSumDigits17.toString().replace('0', '1').toCharArray()
+                val result28 = powSumDigits28.toString().replace('0', '1').toCharArray()
+                val result39 = powSumDigits39.toString().replace('0', '1').toCharArray()
+                val result410 = powSumDigits410.toString().replace('0', '1').toCharArray()
+                val result511 = powSumDigits511.toString().replace('0', '1').toCharArray()
+                val result612 = powSumDigits612.toString().replace('0', '1').toCharArray()
                 if(result17.size == 1 || result28.size == 1 || result39.size == 1 || result410.size == 1 || result511.size == 1 || result612.size == 1){
                     customToast("Result can't predict, please select number by clicking box.")
                     return
