@@ -1,3 +1,3 @@
 package com.aiytl.powerballPredictor.model
 
-data class SixNumber(val num1 : Char, val num2 : Char, val num3 : Char, val num4 : Char, val num5 : Char, val num6 : Char)
+data class SixNumber(val num1: String, val num2: String, val num3: String, val num4: String, val num5: String, val num6: String)
