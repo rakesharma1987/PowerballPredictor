@@ -1,10 +1,12 @@
-package com.aiytl.powerballPredictor
+package com.aiytl.powerballPredictor.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.TextView
 import android.widget.Toast
+import com.aiytl.powerballPredictor.preferences.GooglePlayBillingPreferences
+import com.aiytl.powerballPredictor.R
 
 open class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

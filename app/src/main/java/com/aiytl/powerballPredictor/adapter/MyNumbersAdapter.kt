@@ -1,8 +1,6 @@
-package com.aiytl.powerballPredictor
+package com.aiytl.powerballPredictor.adapter
 
-import android.graphics.Color
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aiytl.powerballPredictor.databinding.LayoutRowBinding

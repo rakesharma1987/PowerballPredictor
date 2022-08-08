@@ -1,4 +1,4 @@
-package com.aiytl.powerballPredictor
+package com.aiytl.powerballPredictor.activities
 
 import android.app.Dialog
 import android.content.Context
@@ -8,19 +8,23 @@ import android.view.View
 import android.widget.GridLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.aiytl.powerballPredictor.*
+import com.aiytl.powerballPredictor.adapter.MyNumbersAdapter
+import com.aiytl.powerballPredictor.adapter.SixNumberAdapter
 import com.aiytl.powerballPredictor.databinding.ActivityMainBinding
 import com.aiytl.powerballPredictor.databinding.LayoutDialogNumbersBinding
+import com.aiytl.powerballPredictor.interfaceAndListeners.RecyclerItemClickListenr
 import com.aiytl.powerballPredictor.model.SixNumber
+import com.aiytl.powerballPredictor.preferences.GooglePlayBillingPreferences
 import com.android.billingclient.api.*
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import java.math.BigInteger
 
-class MainActivity : BaseActivity(), View.OnClickListener {
+class PowerballActivity : BaseActivity(), View.OnClickListener {
     private lateinit var context: Context
     private lateinit var binding: ActivityMainBinding
     private lateinit var dialogBinding: LayoutDialogNumbersBinding
@@ -85,7 +89,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         binding.btnGen2nos.setOnClickListener(this)
         binding.btnGen40nos.setOnClickListener(this)
 
-        if (!GooglePlayBillingPreferences.isPurchasedForThreeNo()){
+        if (!GooglePlayBillingPreferences.isPurchased()){
             binding.btnGen40nos.text = "Buy Now"
         }else{
             binding.btnGen40nos.text = "Generate 40's Rows"
@@ -120,9 +124,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         dialogBinding = LayoutDialogNumbersBinding.inflate(layoutInflater)
-        dialogBinding.rvNumbers.layoutManager = GridLayoutManager(this@MainActivity, 10)
+        dialogBinding.rvNumbers.layoutManager = GridLayoutManager(this@PowerballActivity, 10)
 
-        dialog = Dialog(this@MainActivity)
+        dialog = Dialog(this@PowerballActivity)
         dialog.setContentView(dialogBinding.root)
         dialog.setCancelable(false)
         val window = dialog.window
@@ -141,7 +145,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 binding.tv1First5column.text = listOfFirst5Cols[position]
@@ -165,7 +169,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 binding.tv1First6column.text = listOfFirst6Col[position]
@@ -197,7 +201,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -235,7 +239,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -273,7 +277,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -311,7 +315,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -349,7 +353,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -392,7 +396,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -430,7 +434,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -467,7 +471,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -505,7 +509,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -543,7 +547,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -581,7 +585,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -624,7 +628,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 }
 
                 dialogBinding.rvNumbers.addOnItemTouchListener(
-                    RecyclerItemClickListenr(this@MainActivity, dialogBinding.rvNumbers,
+                    RecyclerItemClickListenr(this@PowerballActivity, dialogBinding.rvNumbers,
                         object : RecyclerItemClickListenr.OnItemClickListener {
                             override fun onItemClick(view: View, position: Int) {
                                 if(selectedNumber.isNotEmpty() && selectedNumber.contains(list[position])){
@@ -836,7 +840,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
 
             R.id.btn_gen_40nos -> {
-                if (GooglePlayBillingPreferences.isPurchasedForThreeNo()) {
+                if (GooglePlayBillingPreferences.isPurchased()) {
                     generate40sRows()
                 } else {
                     billingClient.startConnection(object : BillingClientStateListener {
@@ -854,11 +858,13 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                                             .build()
 
                                         val responseCode = billingClient.launchBillingFlow(
-                                            this@MainActivity,
+                                            this@PowerballActivity,
                                             flowPurchase
                                         ).responseCode
                                         if (responseCode == 0) {
-                                            GooglePlayBillingPreferences.setPurchasedValueForThreeNo(true)
+                                            GooglePlayBillingPreferences.setPurchased(
+                                                true
+                                            )
                                             binding.btnGen40nos.text = "Generate 40's Rows"
                                         }
                                     }
@@ -869,7 +875,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                         override fun onBillingServiceDisconnected() {
                             // Try to restart the connection on the next request to
                             // Google Play by calling the startConnection() method.
-                            GooglePlayBillingPreferences.setPurchasedValueForThreeNo(false)
+                            GooglePlayBillingPreferences.setPurchased(false)
                         }
                     })
                 }
