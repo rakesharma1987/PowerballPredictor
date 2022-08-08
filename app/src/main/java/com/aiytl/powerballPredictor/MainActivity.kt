@@ -51,6 +51,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     private final var TAG = "MainActivity"
     private lateinit var billingClient : BillingClient
     lateinit var skulList : ArrayList<String>
+    private lateinit var fbInterstitialAdd : InterstitialAd
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,6 +62,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
         MobileAds.initialize(this)
         binding.bannerAdview.loadAd(AdRequest.Builder().build())
+
+
 
         binding.recyclerview6column.layoutManager = LinearLayoutManager(this)
 
@@ -643,36 +646,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             R.id.btn_gen_2nos -> {
                 var adRequest = AdRequest.Builder().build()
-
-//                mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
-//                    override fun onAdClicked() {
-//                        // Called when a click is recorded for an ad.
-//                        Log.d(TAG, "Ad was clicked.")
-//                    }
-//
-//                    override fun onAdDismissedFullScreenContent() {
-//                        // Called when ad is dismissed.
-//                        Log.d(TAG, "Ad dismissed fullscreen content.")
-//                        mInterstitialAd = null
-//                    }
-//
-//                    override fun onAdFailedToShowFullScreenContent(adError: AdError?) {
-//                        // Called when ad fails to show.
-//                        Log.e(TAG, "Ad failed to show fullscreen content.")
-//                        mInterstitialAd = null
-//                    }
-//
-//                    override fun onAdImpression() {
-//                        // Called when an impression is recorded for an ad.
-//                        Log.d(TAG, "Ad recorded an impression.")
-//                    }
-//
-//                    override fun onAdShowedFullScreenContent() {
-//                        // Called when ad is shown.
-//                        Log.d(TAG, "Ad showed fullscreen content.")
-//                    }
-//                }
-
                 InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
                     override fun onAdFailedToLoad(adError: LoadAdError) {
                         adError?.toString()?.let { Log.d(TAG, it) }
@@ -792,8 +765,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
                         if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
-
-//                        var sixNumbers = SixNumber(result17[25]+result17[26], result28[26]+result28[33], result39[33]+result39[34], result410[34]+result410[35], result511[35]+result511[26], result612[26]+result612[25])
                         var sixNumbers = SixNumber(num1, num2, num3, num4, num5,  num6)
                         sixNumberList.add(sixNumbers)
                     }
@@ -854,12 +825,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
                         if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
-
-//                        var sixNumbers = SixNumber(result17[25]+result17[26], result28[26]+result28[33], result39[33]+result39[34], result410[34]+result410[35], result511[35]+result511[26], result612[26]+result612[25])
                         var sixNumbers = SixNumber(num1, num2, num3, num4, num5,  num6)
                         sixNumberList.add(sixNumbers)
-//                        var sixNumbers = SixNumber(result17[27]+result17[8], result28[8]+result28[9], result39[9]+result39[33], result410[33]+result410[11], result511[11]+result612[12], result612[12]+result511[27])
-//                        sixNumberList.add(sixNumbers)
                     }
                 }
 
@@ -975,8 +942,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
         for (i in 1..40){
             if (i==1){
-//                        var sixNumbers = SixNumber(result17[25]+result17[26], result28[26]+result28[33], result39[33]+result39[34], result410[34]+result410[35], result511[35]+result511[26], result612[26]+result612[25])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result17[25]+result17[26]
                 num2 = result28[26]+result28[33]
                 num3 = result39[33]+result39[34]
@@ -1033,14 +998,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
-
-//                        var sixNumbers = SixNumber(result17[25]+result17[26], result28[26]+result28[33], result39[33]+result39[34], result410[34]+result410[35], result511[35]+result511[26], result612[26]+result612[25])
                 var sixNumbers = SixNumber(num1, num2, num3, num4, num5,  num6)
                 sixNumberList.add(sixNumbers)
             }
             if (i==2){
-//                        var sixNumbers = SixNumber(result17[27]+result17[8], result28[8]+result28[9], result39[9]+result39[33], result410[33]+result410[11], result511[11]+result612[12], result612[12]+result511[27])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[8]+result28[9]
                 num2 = result28[8]+result28[9]
                 num3 = result39[9]+result39[33]
@@ -1097,14 +1058,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
-
-//                        var sixNumbers = SixNumber(result17[25]+result17[26], result28[26]+result28[33], result39[33]+result39[34], result410[34]+result410[35], result511[35]+result511[26], result612[26]+result612[25])
                 var sixNumbers = SixNumber(num1, num2, num3, num4, num5,  num6)
                 sixNumberList.add(sixNumbers)
             }
             if (i==3){
-//                        var sixNumbers = SixNumber(result17[13]+result17[14], result28[14]+result28[15], result39[15]+result39[16], result410[16]+result410[17], result511[17]+result612[18], result612[18]+result511[13])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[13]+result28[14]
                 num2 = result28[14]+result28[15]
                 num3 = result39[15]+result39[16]
@@ -1165,8 +1122,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==4){
-//                        var sixNumbers = SixNumber(result17[19]+result17[36], result28[36]+result28[21], result39[21]+result39[22], result410[22]+result410[23], result511[23]+result511[24], result612[24]+result612[19])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[19]+result28[36]
                 num2 = result28[36]+result28[21]
                 num3 = result39[21]+result39[22]
@@ -1227,8 +1182,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==5){
-//                        var sixNumbers = SixNumber(result17[24]+result17[23], result28[23]+result28[22], result39[22]+result28[21], result410[21]+result410[36], result511[36]+result511[19], result612[19]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[24]+result28[23]
                 num2 = result28[23]+result28[22]
                 num3 = result39[22]+result39[21]
@@ -1289,9 +1242,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==6){
-//                        var sixNumbers = SixNumber(result17[18]+result17[17], result28[17]+result28[16], result39[16]+result39[15],
-                //                        result410[15]+result410[13], result511[14]+result511[13], result612[13]+result612[18])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[18]+result28[17]
                 num2 = result28[27]+result28[28]
                 num3 = result39[16]+result39[15]
@@ -1352,9 +1302,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==7){
-//                        var sixNumbers = SixNumber(result17[12]+result17[11], result28[11]+result28[33], result39[33]+result39[9],
-                //                        result410[9]+result410[8], result511[8]+result511[27], result612[27]+result612[8])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[12]+result28[11]
                 num2 = result28[11]+result28[33]
                 num3 = result39[33]+result39[19]
@@ -1415,9 +1362,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==8){
-//                        var sixNumbers = SixNumber(result17[26]+result17[35], result28[35]+result28[34], result39[34]+result39[33],
-                //                        result410[33]+result410[26], result511[26]+result511[25], result612[25]+result612[33])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[16]+result28[36]
                 num2 = result28[15]+result28[19]
                 num3 = result39[14]+result39[23]
@@ -1478,9 +1422,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==9){
-//                        var sixNumbers = SixNumber(result17[25]+result17[33], result28[33]+result28[35], result39[35]+result39[27],
-                //                        result410[27]+result410[9], result511[9]+result511[11], result612[11]+result612[27])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[11]+result28[13]
                 num2 = result28[13]+result28[15]
                 num3 = result39[15]+result39[17]
@@ -1541,9 +1482,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==10){
-//                        var sixNumbers = SixNumber(result17[11]+result17[13], result28[13]+result28[15], result39[15]+result39[17],
-                //                        result410[17]+result410[19], result511[19]+result511[12], result612[21]+result612[19])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[11]+result28[13]
                 num2 = result28[13]+result28[15]
                 num3 = result39[15]+result39[17]
@@ -1604,9 +1542,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==11){
-//                        var sixNumbers = SixNumber(result17[21]+result17[23], result28[23]+result28[25], result39[25]+result39[33],
-                //                        result410[33]+result410[35], result511[35]+result511[27], result612[27]+result612[35])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[21]+result28[23]
                 num2 = result28[23]+result28[25]
                 num3 = result39[25]+result39[33]
@@ -1667,9 +1602,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==12){
-//                        var sixNumbers = SixNumber(result17[27]+result17[33], result28[33]+result28[13],
-                //    result39[13]+result39[16], result410[16]+result410[19], result511[19]+result511[22], result612[22]+result612[19])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[27]+result28[33]
                 num2 = result28[33]+result28[13]
                 num3 = result39[13]+result39[16]
@@ -1730,9 +1662,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==13){
-//                        var sixNumbers = SixNumber(result17[22]+result17[24], result28[24]+result28[25], result39[25]+result39[26],
-                //                        result410[26]+result410[33], result511[33]+result511[34], result612[34]+result612[25])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[22]+result28[24]
                 num2 = result28[24]+result28[25]
                 num3 = result39[25]+result39[26]
@@ -1793,9 +1722,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==14){
-//                        var sixNumbers = SixNumber(result17[26]+result17[34], result28[34]+result28[26], result39[26]+result39[26],
-                //                 result410[8]+result410[18], result511[18]+result511[12], result612[12]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[26]+result28[34]
                 num2 = result28[34]+result28[26]
                 num3 = result39[26]+result39[26]
@@ -1856,9 +1782,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==15){
-//                        var sixNumbers = SixNumber(result17[12]+result17[14], result28[14]+result28[16], result39[16]+result39[18],
-                //                        result410[18]+result410[36], result511[36]+result511[22], result612[22]+result612[21])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[12]+result28[14]
                 num2 = result28[14]+result28[16]
                 num3 = result39[16]+result39[18]
@@ -1919,9 +1842,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==16){
-//                        var sixNumbers = SixNumber(result17[24]+result17[18], result28[18]+result28[12], result39[12]+result39[26],
-                //                        result410[26]+result410[26], result511[26]+result511[25], result612[25]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[24]+result28[18]
                 num2 = result28[18]+result28[12]
                 num3 = result39[12]+result39[26]
@@ -1982,9 +1902,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==17){
-//                        var sixNumbers = SixNumber(result17[33]+result17[26], result28[26]+result28[9], result39[9]+result39[12],
-                //           result410[12]+result410[15], result511[15]+result511[18], result612[18]+result612[17])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[33]+result28[26]
                 num2 = result28[26]+result28[9]
                 num3 = result39[9]+result39[12]
@@ -2045,9 +1962,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==18){
-//                        var sixNumbers = SixNumber(result17[34]+result17[8], result28[8]+result28[12], result39[12]+result39[16],
-                //                        result410[16]+result410[36], result511[36]+result511[24], result612[24]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[34]+result28[8]
                 num2 = result28[8]+result28[12]
                 num3 = result39[12]+result39[16]
@@ -2108,9 +2022,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==19){
-//                        var sixNumbers = SixNumber(result17[24]+result17[36], result28[36]+result28[16], result39[16]+result39[12],
-                //                        result410[12]+result410[8], result511[8]+result511[34], result612[34]+result612[8])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[24]+result28[36]
                 num2 = result28[36]+result28[16]
                 num3 = result39[16]+result39[12]
@@ -2171,9 +2082,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==20){
-//                        var sixNumbers = SixNumber(result17[18]+result17[15], result28[15]+result28[12], result39[12]+result39[9],
-                //                        result410[9]+result410[26], result511[26]+result511[33], result612[33]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[18]+result28[15]
                 num2 = result28[15]+result28[12]
                 num3 = result39[12]+result39[9]
@@ -2234,9 +2142,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==21){
-//                        var sixNumbers = SixNumber(result17[25]+result17[26], result28[26]+result28[26], result39[26]+result39[12],
-                //            result410[12]+result410[18], result511[18]+result511[24], result612[24]+result612[23])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[25]+result28[26]
                 num2 = result28[26]+result28[26]
                 num3 = result39[26]+result39[12]
@@ -2301,9 +2206,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==23){
-//                        var sixNumbers = SixNumber(result17[26]+result17[34], result28[34]+result28[26], result39[26]+result39[21],
-                //              result410[21]+result410[14], result511[14]+result511[27], result612[27]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[26]+result28[34]
                 num2 = result28[34]+result28[26]
                 num3 = result39[26]+result39[21]
@@ -2364,9 +2266,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==24){
-//                        var sixNumbers = SixNumber(result17[8]+result17[16], result28[16]+result28[24], result39[24]+result39[8],
-                //           result410[8]+result410[33], result511[33]+result511[12], result612[12]+result612[11])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[8]+result28[16]
                 num2 = result28[16]+result28[24]
                 num3 = result39[24]+result39[8]
@@ -2427,9 +2326,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==25){
-//                        var sixNumbers = SixNumber(result17[9]+result17[18], result28[18]+result28[14], result39[14]+result39[16],
-                //            result410[16]+result410[18], result511[18]+result511[36], result612[36]+result612[14])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[9]+result28[18]
                 num2 = result28[18]+result28[14]
                 num3 = result39[14]+result39[16]
@@ -2490,9 +2386,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==26){
-//                        var sixNumbers = SixNumber(result17[33]+result17[36], result28[36]+result28[21], result39[21]+result39[22],
-                //       result410[22]+result410[23], result511[23]+result511[24], result612[24]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[33]+result28[36]
                 num2 = result28[36]+result28[21]
                 num3 = result39[21]+result39[22]
@@ -2553,9 +2446,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==27){
-//                    var sixNumbers = SixNumber(result17[11]+result17[36], result28[22]+result28[33], result39[33]+result39[26],
-                //              result410[26]+result410[9], result511[9]+result511[12], result612[12]+result612[33])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[11]+result28[36]
                 num2 = result28[22]+result28[33]
                 num3 = result39[33]+result39[26]
@@ -2616,9 +2506,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==28){
-//                      var sixNumbers = SixNumber(result17[12]+result17[9], result28[9]+result28[26], result39[26]+result39[33],
-                //       result410[33]+result410[22], result511[22]+result511[26], result612[11]+result612[21])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[12]+result28[9]
                 num2 = result28[9]+result28[26]
                 num3 = result39[26]+result39[33]
@@ -2679,9 +2566,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==29){
-//                   var sixNumbers = SixNumber(result17[12]+result17[24], result28[24]+result28[15], result39[15]+result39[18],
-                //         result410[18]+result410[21], result511[21]+result511[24], result612[24]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[12]+result28[24]
                 num2 = result28[24]+result28[15]
                 num3 = result39[15]+result39[18]
@@ -2742,9 +2626,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==30){
-//                 var sixNumbers = SixNumber(result17[13]+result17[12], result28[12]+result28[11], result39[11]+result39[33],
-                //      result410[33]+result410[11], result511[11]+result511[21], result612[12]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[13]+result28[12]
                 num2 = result28[12]+result28[11]
                 num3 = result39[11]+result39[33]
@@ -2805,9 +2686,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==31){
-//                        var sixNumbers = SixNumber(result17[26]+result17[25], result28[25]+result28[34], result39[34]+result39[33],
-                //         result410[33]+result410[26], result511[26]+result511[26], result612[35]+result612[34])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[26]+result28[25]
                 num2 = result28[25]+result28[34]
                 num3 = result39[34]+result39[33]
@@ -2868,9 +2746,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==32){
-//                        var sixNumbers = SixNumber(result17[8]+result17[27], result28[27]+result28[33], result39[33]+result39[9],
-                //             result410[9]+result410[21], result511[12]+result511[21], result612[11]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[8]+result28[27]
                 num2 = result28[27]+result28[33]
                 num3 = result39[33]+result39[9]
@@ -2931,9 +2806,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==33){
-//                 var sixNumbers = SixNumber(result17[14]+result17[13], result28[13]+result28[16], result39[16]+result39[15],
-                //       result410[15]+result410[18], result511[18]+result511[27], result612[17]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[14]+result28[13]
                 num2 = result28[13]+result28[16]
                 num3 = result39[16]+result39[15]
@@ -2994,9 +2866,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==34){
-//              var sixNumbers = SixNumber(result17[19]+result17[18], result28[18]+result28[26], result39[21]+result39[26],
-                //              result410[36]+result410[22], result511[22]+result511[12], result612[21]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[19]+result28[18]
                 num2 = result28[18]+result28[26]
                 num3 = result39[21]+result39[26]
@@ -3057,9 +2926,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==35){
-//                        var sixNumbers = SixNumber(result17[24]+result17[23], result28[23]+result28[9], result39[9]+result39[25],
-                //                        result410[33]+result410[11], result511[11]+result511[26], result612[12]+result612[21])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[24]+result28[23]
                 num2 = result28[23]+result28[9]
                 num3 = result39[9]+result39[25]
@@ -3120,9 +2986,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==36){
-//                        var sixNumbers = SixNumber(result17[25]+result17[34], result28[34]+result28[8], result39[8]+result39[21],
-                //                 result410[12]+result410[16], result511[16]+result511[26], result612[36]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[25]+result28[34]
                 num2 = result28[34]+result28[8]
                 num3 = result39[8]+result39[21]
@@ -3183,9 +3046,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==37){
-//                 var sixNumbers = SixNumber(result17[24]+result17[35], result28[35]+result28[15], result39[15]+result39[36],
-                //                 result410[36]+result410[11], result511[11]+result511[21], result612[12]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[24]+result28[35]
                 num2 = result28[35]+result28[15]
                 num3 = result39[15]+result39[36]
@@ -3246,9 +3106,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==38){
-//          var sixNumbers = SixNumber(result17[8]+result17[11], result28[11]+result28[34], result39[14]+result39[17],
-                //          result410[17]+result410[36], result511[36]+result511[33], result612[23]+result612[26])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[8]+result28[11]
                 num2 = result28[11]+result28[34]
                 num3 = result39[14]+result39[17]
@@ -3309,9 +3166,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==39){
-//         var sixNumbers = SixNumber(result17[9]+result17[13], result28[13]+result28[17], result39[17]+result39[21],
-                //         result410[21]+result410[11], result511[11]+result511[21], result612[12]+result612[23])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[9]+result28[13]
                 num2 = result28[13]+result28[17]
                 num3 = result39[17]+result39[21]
@@ -3372,9 +3226,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==40){
-//            var sixNumbers = SixNumber(result17[34]+result17[27], result28[27]+result28[11], result39[11]+result39[15],
-                //            result410[15]+result410[19], result511[19]+result511[23], result612[23]+result612[19])
-//                        sixNumberList.add(sixNumbers)
                 num1 = result28[34]+result28[27]
                 num2 = result28[27]+result28[11]
                 num3 = result39[11]+result39[15]
@@ -3438,6 +3289,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
         var sixNumberAdapter = SixNumberAdapter(sixNumberList)
         binding.recyclerview6column.adapter = sixNumberAdapter
+    }
+
+    private fun initFBIntAdd(){
+
     }
 
 }
