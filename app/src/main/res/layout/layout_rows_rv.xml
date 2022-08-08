@@ -18,7 +18,9 @@
         android:textAlignment="center"
         android:gravity="center_vertical"
         android:textStyle="bold"
-        tools:ignore="RtlCompat" />
+        tools:ignore="RtlCompat"
+        android:textSize="@dimen/txt_size"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +38,8 @@
             android:layout_marginRight="2dp"
             tools:ignore="RtlCompat"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_size"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -49,7 +52,8 @@
             android:layout_marginRight="2dp"
             tools:ignore="RtlCompat"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_size"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -62,7 +66,8 @@
             tools:ignore="RtlCompat"
             android:layout_marginRight="2dp"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_size"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -75,7 +80,8 @@
             tools:ignore="RtlCompat"
             android:layout_marginRight="2dp"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_size"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -88,7 +94,8 @@
             tools:ignore="RtlCompat"
             android:layout_marginRight="2dp"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_size"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -101,7 +108,8 @@
             tools:ignore="RtlCompat"
             android:backgroundTint="@android:color/holo_red_dark"
             android:textColor="@color/white"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textSize="@dimen/txt_size"/>
     </LinearLayout>
 
 </LinearLayout>
