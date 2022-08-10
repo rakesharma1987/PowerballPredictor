@@ -11,7 +11,7 @@
     <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
         android:id="@+id/imageview"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="0dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="10dp"
@@ -21,12 +21,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:siShape="@drawable/round_outline"
-        app:siSquare="true" />
+        app:siSquare="true"
+        ads:layout_constraintHeight_percent=".30"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_powerball"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="0dp"
         android:layout_marginTop="15dp"
         android:backgroundTint="#0D47A1"
         android:text="Powerball"
@@ -36,19 +37,21 @@
         app:cornerRadius="15dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        app:layout_constraintTop_toBottomOf="@id/imageview" />
+        app:layout_constraintTop_toBottomOf="@id/imageview"
+        ads:layout_constraintHeight_percent=".25"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="0dp"
         android:orientation="horizontal"
         ads:layout_constraintTop_toBottomOf="@id/btn_powerball"
         android:weightSum="1"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        ads:layout_constraintHeight_percent=".25">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_rate_app"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="match_parent"
         android:backgroundTint="#FFC400"
         android:text="Rate App"
         android:textAllCaps="false"
@@ -63,7 +66,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_other_app"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="match_parent"
         android:layout_marginRight="10dp"
         android:backgroundTint="#424242"
         android:text="Other Apps"
