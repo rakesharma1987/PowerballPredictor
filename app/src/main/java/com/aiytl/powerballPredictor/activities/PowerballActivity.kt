@@ -1168,7 +1168,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             }
             if (i==2){
                 num1 = result28[8]+result28[9]
-                num2 = result28[8]+result28[9]
+                num2 = result28[18]+result28[9]
                 num3 = result39[9]+result39[33]
                 num4 = result410[33]+result410[11]
                 num5 = result511[11]+result612[12]
@@ -1227,8 +1227,8 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==3){
-                num1 = result28[13]+result28[14]
-                num2 = result28[14]+result28[15]
+                num1 = result28[13]+result28[17]
+                num2 = result28[14]+result28[23]
                 num3 = result39[15]+result39[16]
                 num4 = result410[16]+result410[17]
                 num5 = result511[17]+result612[18]
@@ -1288,7 +1288,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             }
             if (i==4){
                 num1 = result28[19]+result28[36]
-                num2 = result28[36]+result28[21]
+                num2 = result28[36]+result28[1]
                 num3 = result39[21]+result39[22]
                 num4 = result410[22]+result410[23]
                 num5 = result511[23]+result612[24]
@@ -1347,8 +1347,8 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==5){
-                num1 = result28[24]+result28[23]
-                num2 = result28[23]+result28[22]
+                num1 = result28[24]+result28[27]
+                num2 = result28[23]+result28[24]
                 num3 = result39[22]+result39[21]
                 num4 = result410[21]+result410[36]
                 num5 = result511[36]+result612[19]
@@ -1407,8 +1407,8 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==6){
-                num1 = result28[18]+result28[17]
-                num2 = result28[27]+result28[28]
+                num1 = result28[18]+result28[27]
+                num2 = result28[27]+result28[8]
                 num3 = result39[16]+result39[15]
                 num4 = result410[15]+result410[13]
                 num5 = result511[14]+result612[13]
@@ -1467,7 +1467,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==7){
-                num1 = result28[12]+result28[11]
+                num1 = result28[12]+result28[7]
                 num2 = result28[11]+result28[33]
                 num3 = result39[33]+result39[19]
                 num4 = result410[25]+result410[28]
@@ -1588,7 +1588,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             }
             if (i==9){
                 num1 = result28[11]+result28[13]
-                num2 = result28[13]+result28[15]
+                num2 = result28[18]+result28[15]
                 num3 = result39[15]+result39[17]
                 num4 = result410[27]+result410[9]
                 num5 = result511[9]+result612[11]
@@ -1648,7 +1648,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             }
             if (i==10){
                 num1 = result28[11]+result28[13]
-                num2 = result28[13]+result28[15]
+                num2 = result28[13]+result28[16]
                 num3 = result39[15]+result39[17]
                 num4 = result410[17]+result410[19]
                 num5 = result511[19]+result612[12]
@@ -1707,8 +1707,8 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==11){
-                num1 = result28[21]+result28[23]
-                num2 = result28[23]+result28[25]
+                num1 = result28[21]+result28[28]
+                num2 = result28[23]+result28[27]
                 num3 = result39[25]+result39[33]
                 num4 = result410[33]+result410[35]
                 num5 = result511[35]+result612[27]
@@ -1768,7 +1768,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             }
             if (i==12){
                 num1 = result28[27]+result28[33]
-                num2 = result28[33]+result28[13]
+                num2 = result28[30]+result28[23]
                 num3 = result39[13]+result39[16]
                 num4 = result410[16]+result410[19]
                 num5 = result511[19]+result612[22]
@@ -1827,8 +1827,8 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==13){
-                num1 = result28[22]+result28[24]
-                num2 = result28[24]+result28[25]
+                num1 = result28[21]+result28[24]
+                num2 = result28[26]+result28[25]
                 num3 = result39[25]+result39[26]
                 num4 = result410[26]+result410[33]
                 num5 = result511[33]+result612[34]
@@ -1887,8 +1887,8 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==14){
-                num1 = result28[26]+result28[34]
-                num2 = result28[34]+result28[26]
+                num1 = result28[16]+result28[34]
+                num2 = result28[4]+result28[26]
                 num3 = result39[26]+result39[26]
                 num4 = result410[8]+result410[18]
                 num5 = result511[18]+result612[12]
@@ -1947,8 +1947,8 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 sixNumberList.add(sixNumbers)
             }
             if (i==15){
-                num1 = result28[12]+result28[14]
-                num2 = result28[14]+result28[16]
+                num1 = result28[2]+result28[14]
+                num2 = result28[14]+result28[18]
                 num3 = result39[16]+result39[18]
                 num4 = result410[18]+result410[36]
                 num5 = result511[36]+result612[22]
@@ -2008,7 +2008,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             }
             if (i==16){
                 num1 = result28[24]+result28[18]
-                num2 = result28[18]+result28[12]
+                num2 = result28[28]+result28[12]
                 num3 = result39[12]+result39[26]
                 num4 = result410[26]+result410[26]
                 num5 = result511[26]+result612[25]
