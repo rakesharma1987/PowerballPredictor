@@ -676,12 +676,92 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                     customToast("Result can't predict, please select number by clicking box.")
                     return
                 }
-                sumCol17 = Integer.parseInt(binding.tv1.text.toString()).plus(Integer.parseInt(binding.tv7.text.toString()))
-                sumCol28 = Integer.parseInt(binding.tv2.text.toString()).plus(Integer.parseInt(binding.tv8.text.toString()))
-                sumCol39 = Integer.parseInt(binding.tv3.text.toString()).plus(Integer.parseInt(binding.tv9.text.toString()))
-                sumCol410 = Integer.parseInt(binding.tv4.text.toString()).plus(Integer.parseInt(binding.tv10.text.toString()))
-                sumCol511 = Integer.parseInt(binding.tv5.text.toString()).plus(Integer.parseInt(binding.tv11.text.toString()))
-                sumCol612 = Integer.parseInt(binding.tv6.text.toString()).plus(Integer.parseInt(binding.tv12.text.toString()))
+                var string1 : String? = null
+                var string2 : String? = null
+                var string3 : String? = null
+                var string4 : String? = null
+                var string5 : String? = null
+                var string6 : String? = null
+                var string7 : String? = null
+                var string8 : String? = null
+                var string9 : String? = null
+                var string10 : String? = null
+                var string11 : String? = null
+                var string12 : String? = null
+
+                if (binding.tv1.text.toString().toInt() in 1..9){
+                    string1 = "11"
+                }else{
+                    string1 = binding.tv1.text.toString()
+                }
+                if (binding.tv2.text.toString().toInt() in 1..9){
+                    string2 = "13"
+                }else{
+                    string2 = binding.tv2.text.toString()
+                }
+                if (binding.tv3.text.toString().toInt() in 1..9){
+                    string3 = "15"
+                }else{
+                    string3 = binding.tv3.text.toString()
+                }
+                if (binding.tv4.text.toString().toInt() in 1..9){
+                    string4 = "17"
+                }else{
+                    string4 = binding.tv4.text.toString()
+                }
+                if (binding.tv5.text.toString().toInt() in 1..9){
+                    string5 = "19"
+                }else{
+                    string5 = binding.tv5.text.toString()
+                }
+                if (binding.tv6.text.toString().toInt() in 1..9){
+                    string6 = "21"
+                }else{
+                    string6 = binding.tv6.text.toString()
+                }
+                if (binding.tv7.text.toString().toInt() in 1..9){
+                    string7 = "23"
+                }else{
+                    string7 = binding.tv7.text.toString()
+                }
+                if (binding.tv8.text.toString().toInt() in 1..9){
+                    string8 = "25"
+                }else{
+                    string8 = binding.tv8.text.toString()
+                }
+                if (binding.tv9.text.toString().toInt() in 1..9){
+                    string9 = "27"
+                }else{
+                    string9 = binding.tv9.text.toString()
+                }
+                if (binding.tv10.text.toString().toInt() in 1..9){
+                    string10 = "29"
+                }else{
+                    string10 = binding.tv10.text.toString()
+                }
+                if (binding.tv11.text.toString().toInt() in 1..9){
+                    string11 = "31"
+                }else{
+                    string11 = binding.tv11.text.toString()
+                }
+                if (binding.tv12.text.toString().toInt() in 1..9){
+                    string12 = "33"
+                }else{
+                    string12 = binding.tv12.text.toString()
+                }
+                sumCol17 = Integer.parseInt(string1).plus(Integer.parseInt(string7))
+                sumCol28 = Integer.parseInt(string2).plus(Integer.parseInt(string8))
+                sumCol39 = Integer.parseInt(string3).plus(Integer.parseInt(string9))
+                sumCol410 = Integer.parseInt(string4).plus(Integer.parseInt(string10))
+                sumCol511 = Integer.parseInt(string5).plus(Integer.parseInt(string11))
+                sumCol612 = Integer.parseInt(string6).plus(Integer.parseInt(string12))
+
+//                sumCol17 = Integer.parseInt(binding.tv1.text.toString()).plus(Integer.parseInt(binding.tv7.text.toString()))
+//                sumCol28 = Integer.parseInt(binding.tv2.text.toString()).plus(Integer.parseInt(binding.tv8.text.toString()))
+//                sumCol39 = Integer.parseInt(binding.tv3.text.toString()).plus(Integer.parseInt(binding.tv9.text.toString()))
+//                sumCol410 = Integer.parseInt(binding.tv4.text.toString()).plus(Integer.parseInt(binding.tv10.text.toString()))
+//                sumCol511 = Integer.parseInt(binding.tv5.text.toString()).plus(Integer.parseInt(binding.tv11.text.toString()))
+//                sumCol612 = Integer.parseInt(binding.tv6.text.toString()).plus(Integer.parseInt(binding.tv12.text.toString()))
 
                 var sumDigits17 : Int = getSumOfDigits(sumCol17!!)
                 var sumDigits28 : Int = getSumOfDigits(sumCol28!!)
@@ -698,11 +778,11 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 val powSumDigits612 = BigInteger(sumDigits612.toString()).pow(80)
 
                 val result17 = powSumDigits17.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-                val result28 = powSumDigits28.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-                val result39 = powSumDigits39.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-                val result410 = powSumDigits410.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-                val result511 = powSumDigits511.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-                val result612 = powSumDigits612.toString().replace('0', '1').map { it.toString()}.toTypedArray()
+                val result28 = powSumDigits28.toString().replace('0', '2').map { it.toString()}.toTypedArray()
+                val result39 = powSumDigits39.toString().replace('0', '3').map { it.toString()}.toTypedArray()
+                val result410 = powSumDigits410.toString().replace('0', '4').map { it.toString()}.toTypedArray()
+                val result511 = powSumDigits511.toString().replace('0', '5').map { it.toString()}.toTypedArray()
+                val result612 = powSumDigits612.toString().replace('0', '6').map { it.toString()}.toTypedArray()
                 var num1 : String? = null
                 var num2 : String? = null
                 var num3 : String? = null
@@ -722,52 +802,52 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                         if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                            num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                         }
                         if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num2 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                            num2 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                         }
                         if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num3 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                            num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                         }
                         if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num4 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                            num4 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                         }
                         if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num5 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                            num5 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                         }
                         if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                         }else{
-                            num6 = binding.tv1First6column.text.toString().toInt()!!.minus(9).toString()
+                            num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                         }
                         if (num1.toInt() == num2.toInt()) num2 = num2.toInt().plus(9).toString()
-                        if (num1.toInt() == num3.toInt()) num3 = num3.toInt().plus(9).toString()
-                        if (num1.toInt() == num4.toInt()) num4 = num4.toInt().plus(9).toString()
-                        if (num1.toInt() == num5.toInt()) num5 = num5.toInt().plus(9).toString()
-                        if (num1.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
+                        if (num1.toInt() == num3.toInt()) num3 = num3.toInt().plus(1).toString()
+                        if (num1.toInt() == num4.toInt()) num4 = num4.toInt().plus(2).toString()
+                        if (num1.toInt() == num5.toInt()) num5 = num5.toInt().plus(3).toString()
+                        if (num1.toInt() == num6.toInt()) num6 = num6.toInt().plus(4).toString()
 
-                        if (num2.toInt() == num3.toInt()) num3 = num3.toInt().plus(9).toString()
-                        if (num2.toInt() == num4.toInt()) num4 = num4.toInt().plus(9).toString()
-                        if (num2.toInt() == num5.toInt()) num5 = num5.toInt().plus(9).toString()
-                        if (num2.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
+                        if (num2.toInt() == num3.toInt()) num3 = num3.toInt().plus(5).toString()
+                        if (num2.toInt() == num4.toInt()) num4 = num4.toInt().plus(6).toString()
+                        if (num2.toInt() == num5.toInt()) num5 = num5.toInt().plus(7).toString()
+                        if (num2.toInt() == num6.toInt()) num6 = num6.toInt().plus(8).toString()
 
-                        if (num3.toInt() == num4.toInt()) num4 = num4.toInt().plus(9).toString()
-                        if (num3.toInt() == num5.toInt()) num5 = num5.toInt().plus(9).toString()
-                        if (num3.toInt() == num6.toInt()) num6 = num2.toInt().plus(9).toString()
+                        if (num3.toInt() == num4.toInt()) num4 = num4.toInt().plus(1).toString()
+                        if (num3.toInt() == num5.toInt()) num5 = num5.toInt().plus(2).toString()
+                        if (num3.toInt() == num6.toInt()) num6 = num2.toInt().plus(3).toString()
 
-                        if (num4.toInt() == num5.toInt()) num5 = num5.toInt().plus(9).toString()
-                        if (num4.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
+                        if (num4.toInt() == num5.toInt()) num5 = num5.toInt().plus(4).toString()
+                        if (num4.toInt() == num6.toInt()) num6 = num6.toInt().plus(5).toString()
 
-                        if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
+                        if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(6).toString()
 
                         var sixNumbers = SixNumber(num1, num2, num3, num4, num5,  num6)
                         sixNumberList.add(sixNumbers)
@@ -782,50 +862,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                         if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                            num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                         }
                         if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                            num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                         }
                         if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                            num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                         }
                         if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                            num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                         }
                         if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                         }else{
-                            num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                            num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                         }
                         if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                         }else{
-                            num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                            num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                         }
-                        if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                        if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                        if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                        if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                        if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                        if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                        if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                        if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                        if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                        if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                        if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                        if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                        if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                        if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                        if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                        if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                        if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                        if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                        if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                        if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                        if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                        if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                        if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                        if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                        if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                        if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                        if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                        if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                         if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -905,12 +985,91 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             customToast("Result can't predict, please select number by clicking box.")
             return
         }
-        sumCol17 = Integer.parseInt(binding.tv1.text.toString()).plus(Integer.parseInt(binding.tv7.text.toString()))
-        sumCol28 = Integer.parseInt(binding.tv2.text.toString()).plus(Integer.parseInt(binding.tv8.text.toString()))
-        sumCol39 = Integer.parseInt(binding.tv3.text.toString()).plus(Integer.parseInt(binding.tv9.text.toString()))
-        sumCol410 = Integer.parseInt(binding.tv4.text.toString()).plus(Integer.parseInt(binding.tv10.text.toString()))
-        sumCol511 = Integer.parseInt(binding.tv5.text.toString()).plus(Integer.parseInt(binding.tv11.text.toString()))
-        sumCol612 = Integer.parseInt(binding.tv6.text.toString()).plus(Integer.parseInt(binding.tv12.text.toString()))
+        var string1 : String? = null
+        var string2 : String? = null
+        var string3 : String? = null
+        var string4 : String? = null
+        var string5 : String? = null
+        var string6 : String? = null
+        var string7 : String? = null
+        var string8 : String? = null
+        var string9 : String? = null
+        var string10 : String? = null
+        var string11 : String? = null
+        var string12 : String? = null
+
+        if (binding.tv1.text.toString().toInt() in 1..9){
+            string1 = "11"
+        }else{
+            string1 = binding.tv1.text.toString()
+        }
+        if (binding.tv2.text.toString().toInt() in 1..9){
+            string2 = "13"
+        }else{
+            string2 = binding.tv2.text.toString()
+        }
+        if (binding.tv3.text.toString().toInt() in 1..9){
+            string3 = "15"
+        }else{
+            string3 = binding.tv3.text.toString()
+        }
+        if (binding.tv4.text.toString().toInt() in 1..9){
+            string4 = "17"
+        }else{
+            string4 = binding.tv4.text.toString()
+        }
+        if (binding.tv5.text.toString().toInt() in 1..9){
+            string5 = "19"
+        }else{
+            string5 = binding.tv5.text.toString()
+        }
+        if (binding.tv6.text.toString().toInt() in 1..9){
+            string6 = "21"
+        }else{
+            string6 = binding.tv6.text.toString()
+        }
+        if (binding.tv7.text.toString().toInt() in 1..9){
+            string7 = "23"
+        }else{
+            string7 = binding.tv7.text.toString()
+        }
+        if (binding.tv8.text.toString().toInt() in 1..9){
+            string8 = "25"
+        }else{
+            string8 = binding.tv8.text.toString()
+        }
+        if (binding.tv9.text.toString().toInt() in 1..9){
+            string9 = "27"
+        }else{
+            string9 = binding.tv9.text.toString()
+        }
+        if (binding.tv10.text.toString().toInt() in 1..9){
+            string10 = "29"
+        }else{
+            string10 = binding.tv10.text.toString()
+        }
+        if (binding.tv11.text.toString().toInt() in 1..9){
+            string11 = "31"
+        }else{
+            string11 = binding.tv11.text.toString()
+        }
+        if (binding.tv12.text.toString().toInt() in 1..9){
+            string12 = "33"
+        }else{
+            string12 = binding.tv12.text.toString()
+        }
+        sumCol17 = Integer.parseInt(string1).plus(Integer.parseInt(string7))
+        sumCol28 = Integer.parseInt(string2).plus(Integer.parseInt(string8))
+        sumCol39 = Integer.parseInt(string3).plus(Integer.parseInt(string9))
+        sumCol410 = Integer.parseInt(string4).plus(Integer.parseInt(string10))
+        sumCol511 = Integer.parseInt(string5).plus(Integer.parseInt(string11))
+        sumCol612 = Integer.parseInt(string6).plus(Integer.parseInt(string12))
+//        sumCol17 = Integer.parseInt(binding.tv1.text.toString()).plus(Integer.parseInt(binding.tv7.text.toString()))
+//        sumCol28 = Integer.parseInt(binding.tv2.text.toString()).plus(Integer.parseInt(binding.tv8.text.toString()))
+//        sumCol39 = Integer.parseInt(binding.tv3.text.toString()).plus(Integer.parseInt(binding.tv9.text.toString()))
+//        sumCol410 = Integer.parseInt(binding.tv4.text.toString()).plus(Integer.parseInt(binding.tv10.text.toString()))
+//        sumCol511 = Integer.parseInt(binding.tv5.text.toString()).plus(Integer.parseInt(binding.tv11.text.toString()))
+//        sumCol612 = Integer.parseInt(binding.tv6.text.toString()).plus(Integer.parseInt(binding.tv12.text.toString()))
 
         var sumDigits17 : Int = getSumOfDigits(sumCol17!!)
         var sumDigits28 : Int = getSumOfDigits(sumCol28!!)
@@ -927,11 +1086,11 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
         val powSumDigits612 = BigInteger(sumDigits612.toString()).pow(80)
 
         val result17 = powSumDigits17.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-        val result28 = powSumDigits28.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-        val result39 = powSumDigits39.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-        val result410 = powSumDigits410.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-        val result511 = powSumDigits511.toString().replace('0', '1').map { it.toString()}.toTypedArray()
-        val result612 = powSumDigits612.toString().replace('0', '1').map { it.toString()}.toTypedArray()
+        val result28 = powSumDigits28.toString().replace('0', '2').map { it.toString()}.toTypedArray()
+        val result39 = powSumDigits39.toString().replace('0', '3').map { it.toString()}.toTypedArray()
+        val result410 = powSumDigits410.toString().replace('0', '4').map { it.toString()}.toTypedArray()
+        val result511 = powSumDigits511.toString().replace('0', '5').map { it.toString()}.toTypedArray()
+        val result612 = powSumDigits612.toString().replace('0', '6').map { it.toString()}.toTypedArray()
 
         var num1 : String? = null
         var num2 : String? = null
@@ -957,50 +1116,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1017,50 +1176,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1077,50 +1236,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1137,50 +1296,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1197,50 +1356,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1257,50 +1416,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1317,50 +1476,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1377,50 +1536,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1437,50 +1596,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1497,50 +1656,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1557,50 +1716,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1617,50 +1776,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1677,50 +1836,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1737,50 +1896,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1797,50 +1956,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1857,50 +2016,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1917,50 +2076,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -1977,50 +2136,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2037,50 +2196,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2097,50 +2256,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2157,50 +2316,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2221,50 +2380,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2281,50 +2440,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2341,50 +2500,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2401,50 +2560,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2461,50 +2620,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2521,50 +2680,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2581,50 +2740,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2641,50 +2800,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2701,50 +2860,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2761,50 +2920,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2821,50 +2980,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2881,50 +3040,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -2941,50 +3100,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(4).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(4).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -3001,50 +3160,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(7).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(7).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(2).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(7).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(2).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -3061,50 +3220,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(5).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(2).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -3121,50 +3280,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(6).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(1).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(6).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(1).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -3181,50 +3340,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(6).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(1).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(6).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(1).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
@@ -3241,50 +3400,50 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 if (num1.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(9).toString()
+                    num1 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num2.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(8).toString()
+                    num2 = binding.tv1First5column.text.toString().toInt()!!.minus(3).toString()
                 }
                 if (num3.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num3 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num4.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(6).toString()
+                    num4 = binding.tv1First5column.text.toString().toInt()!!.minus(1).toString()
                 }
                 if (num5.toInt() <= binding.tv1First5column.text.toString().toInt()){
 
                 }else{
-                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(5).toString()
+                    num5 = binding.tv1First5column.text.toString().toInt()!!.minus(2).toString()
                 }
                 if (num6.toInt() <= binding.tv1First6column.text.toString().toInt()){
 
                 }else{
-                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(6).toString()
+                    num6 = binding.tv1First6column.text.toString().toInt()!!.minus(1).toString()
                 }
-                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(9).toString()
-                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(8).toString()
-                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
+                if (num1.toInt() == num2.toInt()) num2 = num2.toInt().minus(1).toString()
+                if (num1.toInt() == num3.toInt()) num3 = num3.toInt().minus(3).toString()
+                if (num1.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num1.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
                 if (num1.toInt() == num6.toInt()) num6 = num6.toInt().minus(10).toString()
 
-                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(9).toString()
-                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(8).toString()
-                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
+                if (num2.toInt() == num3.toInt()) num3 = num3.toInt().minus(1).toString()
+                if (num2.toInt() == num4.toInt()) num4 = num4.toInt().minus(3).toString()
+                if (num2.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
                 if (num2.toInt() == num6.toInt()) num6 = num6.toInt().minus(10).toString()
 
-                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(5).toString()
-                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(6).toString()
-                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(9).toString()
+                if (num3.toInt() == num4.toInt()) num4 = num4.toInt().minus(2).toString()
+                if (num3.toInt() == num5.toInt()) num5 = num5.toInt().minus(1).toString()
+                if (num3.toInt() == num6.toInt()) num6 = num2.toInt().minus(1).toString()
 
-                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(7).toString()
-                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(8).toString()
+                if (num4.toInt() == num5.toInt()) num5 = num5.toInt().minus(2).toString()
+                if (num4.toInt() == num6.toInt()) num6 = num6.toInt().minus(3).toString()
 
                 if (num5.toInt() == num6.toInt()) num6 = num6.toInt().plus(9).toString()
 
