@@ -32,16 +32,22 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view : View?) {
         when(view!!.id){
             R.id.btn_powerball ->{
-                // TODO:
+                startActivity(Intent(this@HomeActivity, PowerballActivity::class.java))
             }
 
             R.id.btn_other_app ->{
-                // TODO:
+                val uri = Uri.parse("https://play.google.com/store/apps/dev?id=5422523287693933202")
+                val myAppLinkToMarket = Intent(Intent.ACTION_VIEW, uri)
+                try {
+                    startActivity(myAppLinkToMarket)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(this, "Impossible to find an application for the market", Toast.LENGTH_LONG).show()
+                }
 
             }
 
             R.id.btn_rate_app ->{
-                val uri = Uri.parse("market://details?id="+"5422523287693933202")
+                val uri = Uri.parse("market://details?id="+applicationContext.packageName)
                 val myAppLinkToMarket = Intent(Intent.ACTION_VIEW, uri)
                 try {
                     startActivity(myAppLinkToMarket)
