@@ -217,7 +217,7 @@
             android:layout_marginLeft="2dp"
             android:layout_weight="1"
             android:background="@drawable/border"
-            android:backgroundTint="@android:color/holo_red_dark">
+            android:backgroundTint="#FF1744">
 
             <TextView
                 android:id="@+id/tv6"
@@ -352,7 +352,7 @@
             android:layout_marginLeft="2dp"
             android:layout_weight="1"
             android:background="@drawable/border"
-            android:backgroundTint="@android:color/holo_red_dark"
+            android:backgroundTint="#FF1744"
             >
 
             <TextView
