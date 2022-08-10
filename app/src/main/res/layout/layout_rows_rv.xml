@@ -106,7 +106,7 @@
             android:gravity="center_vertical"
             android:textAlignment="center"
             tools:ignore="RtlCompat"
-            android:backgroundTint="@android:color/holo_red_dark"
+            android:backgroundTint="#FF1744"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="@dimen/txt_size"/>
