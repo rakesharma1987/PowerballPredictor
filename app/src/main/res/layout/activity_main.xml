@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ll_2"
         android:gravity="center"
-        android:text="Enter the previous 2 winning number\s"
+        android:text="Enter previous 2 winning number\s"
         android:textColor="@color/black"
         android:textSize="13sp"
         android:textStyle="bold" />
