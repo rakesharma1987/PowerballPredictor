@@ -27,7 +27,7 @@
         android:id="@+id/btn_powerball"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#0D47A1"
         android:text="Powerball"
         android:textAllCaps="false"
@@ -41,9 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:orientation="horizontal"
-        ads:layout_constraintBottom_toTopOf="@id/banner_adview"
+        ads:layout_constraintTop_toBottomOf="@id/btn_powerball"
         android:weightSum="1"
-        android:layout_marginBottom="20dp">
+        android:layout_marginTop="20dp">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_rate_app"
