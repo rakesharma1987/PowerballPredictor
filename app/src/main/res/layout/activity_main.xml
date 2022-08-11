@@ -378,7 +378,7 @@
         android:layout_marginLeft="2dp"
         android:layout_marginTop="2dp"
         android:layout_marginRight="2dp"
-        android:text="Generate 2 Number\'s(Free Version)"
+        android:text="Generate 2 Lines/Rows(Free Version)"
         android:textAllCaps="false" />
 
     <com.google.android.material.button.MaterialButton
@@ -388,7 +388,7 @@
         android:layout_below="@+id/btn_gen_2nos"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
-        android:text="Generate 40 Number\'s(Pro Version)"
+        android:text="Generate 40 Lines/Rows"
         android:textAllCaps="false"
 
         />

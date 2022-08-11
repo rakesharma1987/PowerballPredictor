@@ -90,9 +90,9 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
         binding.btnGen40nos.setOnClickListener(this)
 
         if (!GooglePlayBillingPreferences.isPurchased()) {
-            binding.btnGen40nos.text = "Buy Now"
+            binding.btnGen40nos.text = "Generate 40's Lines/Rows(Paid Version)"
         } else {
-            binding.btnGen40nos.text = "Generate 40's Rows"
+            binding.btnGen40nos.text = "Generate 40's Lines/Rows"
         }
 
         val purchasesUpdatedListener =
@@ -989,7 +989,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                                             GooglePlayBillingPreferences.setPurchased(
                                                 true
                                             )
-                                            binding.btnGen40nos.text = "Generate 40's Rows"
+                                            binding.btnGen40nos.text = "Generate 40's Lines/Rows"
                                         }
                                     }
                                 }
