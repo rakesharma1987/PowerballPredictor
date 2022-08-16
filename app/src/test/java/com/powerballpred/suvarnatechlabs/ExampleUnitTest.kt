@@ -1,4 +1,4 @@
-package com.aiytl.powerballPredictor
+package com.powerballpred.suvarnatechlabs
 
 import org.junit.Test
 

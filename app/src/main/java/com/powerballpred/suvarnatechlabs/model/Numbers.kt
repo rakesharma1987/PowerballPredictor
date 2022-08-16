@@ -1,4 +1,4 @@
-package com.aiytl.powerballPredictor.model
+package com.powerballpred.suvarnatechlabs.model
 
 class Numbers(private var num1 : Int, private var num2 : Int, private var num3 : Int, private var num4 : Int,
               private var num5 : Int, private var num6 : Int, private var num7 : Int, private var num8 : Int,

@@ -1,4 +1,4 @@
-package com.aiytl.powerballPredictor.preferences
+package com.powerballpred.suvarnatechlabs.preferences
 
 import android.content.Context
 import android.content.SharedPreferences

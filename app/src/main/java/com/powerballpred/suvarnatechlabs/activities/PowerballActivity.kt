@@ -1,4 +1,4 @@
-package com.aiytl.powerballPredictor.activities
+package com.powerballpred.suvarnatechlabs.activities
 
 import android.app.Dialog
 import android.content.Context
@@ -8,14 +8,14 @@ import android.view.View
 import android.widget.GridLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.aiytl.powerballPredictor.*
-import com.aiytl.powerballPredictor.adapter.MyNumbersAdapter
-import com.aiytl.powerballPredictor.adapter.SixNumberAdapter
-import com.aiytl.powerballPredictor.databinding.ActivityMainBinding
-import com.aiytl.powerballPredictor.databinding.LayoutDialogNumbersBinding
-import com.aiytl.powerballPredictor.interfaceAndListeners.RecyclerItemClickListenr
-import com.aiytl.powerballPredictor.model.SixNumber
-import com.aiytl.powerballPredictor.preferences.GooglePlayBillingPreferences
+import com.powerballpred.suvarnatechlabs.*
+import com.powerballpred.suvarnatechlabs.adapter.MyNumbersAdapter
+import com.powerballpred.suvarnatechlabs.adapter.SixNumberAdapter
+import com.powerballpred.suvarnatechlabs.databinding.ActivityMainBinding
+import com.powerballpred.suvarnatechlabs.databinding.LayoutDialogNumbersBinding
+import com.powerballpred.suvarnatechlabs.interfaceAndListeners.RecyclerItemClickListenr
+import com.powerballpred.suvarnatechlabs.model.SixNumber
+import com.powerballpred.suvarnatechlabs.preferences.GooglePlayBillingPreferences
 import com.android.billingclient.api.*
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
@@ -106,7 +106,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             .build()
 
         skulList = ArrayList<String>()
-        skulList.add("android.test.purchased")
+        skulList.add("Powerball")
 
         billingClient.startConnection(object : BillingClientStateListener {
             override fun onBillingSetupFinished(billingResult: BillingResult) {
@@ -653,7 +653,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                 var adRequest = AdRequest.Builder().build()
                 InterstitialAd.load(
                     this,
-                    "ca-app-pub-3940256099942544/1033173712",
+                    "ca-app-pub-3164749634609559/5015515507",
                     adRequest,
                     object : InterstitialAdLoadCallback() {
                         override fun onAdFailedToLoad(adError: LoadAdError) {

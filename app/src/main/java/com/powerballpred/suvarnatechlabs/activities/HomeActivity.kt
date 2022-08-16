@@ -1,4 +1,4 @@
-package com.aiytl.powerballPredictor.activities
+package com.powerballpred.suvarnatechlabs.activities
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.aiytl.powerballPredictor.R
-import com.aiytl.powerballPredictor.databinding.ActivityHomeBinding
+import com.powerballpred.suvarnatechlabs.R
+import com.powerballpred.suvarnatechlabs.databinding.ActivityHomeBinding
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 
@@ -36,7 +36,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.btn_other_app ->{
-                val uri = Uri.parse("https://play.google.com/store/apps/dev?id=5422523287693933202")
+                val uri = Uri.parse("https://play.google.com/store/apps/dev?id=7172340817112889805")
                 val myAppLinkToMarket = Intent(Intent.ACTION_VIEW, uri)
                 try {
                     startActivity(myAppLinkToMarket)

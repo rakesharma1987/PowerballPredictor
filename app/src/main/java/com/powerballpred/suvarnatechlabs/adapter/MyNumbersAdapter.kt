@@ -1,9 +1,9 @@
-package com.aiytl.powerballPredictor.adapter
+package com.powerballpred.suvarnatechlabs.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.aiytl.powerballPredictor.databinding.LayoutRowBinding
+import com.powerballpred.suvarnatechlabs.databinding.LayoutRowBinding
 
 class MyNumbersAdapter(private val numberList : List<String>, private val selectedNumber : ArrayList<String>) : RecyclerView.Adapter<MyNumbersAdapter.MyViewHolder>() {
 

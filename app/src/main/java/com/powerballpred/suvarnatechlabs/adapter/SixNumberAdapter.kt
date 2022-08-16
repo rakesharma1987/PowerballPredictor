@@ -1,12 +1,12 @@
-package com.aiytl.powerballPredictor.adapter
+package com.powerballpred.suvarnatechlabs.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.aiytl.powerballPredictor.R
-import com.aiytl.powerballPredictor.model.SixNumber
+import com.powerballpred.suvarnatechlabs.R
+import com.powerballpred.suvarnatechlabs.model.SixNumber
 
 class SixNumberAdapter (private val sixNumbersList : List<SixNumber>) : RecyclerView.Adapter<SixNumberAdapter.MyViewHolder>() {
 

@@ -1,4 +1,4 @@
-package com.aiytl.powerballPredictor.interfaceAndListeners
+package com.powerballpred.suvarnatechlabs.interfaceAndListeners
 
 import android.content.Context
 import android.view.GestureDetector
