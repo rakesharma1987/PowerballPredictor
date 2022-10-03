@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.GridLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.powerballpred.suvarnatechlabs.*
@@ -22,6 +23,8 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import kotlinx.coroutines.withContext
+import java.io.IOException
 import java.math.BigInteger
 
 class PowerballActivity : BaseActivity(), View.OnClickListener {
@@ -97,7 +100,17 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
 
         val purchasesUpdatedListener =
             PurchasesUpdatedListener { billingResult, purchases ->
-                // To be implemented in a later section.
+
+                if(billingResult.responseCode == BillingClient.BillingResponseCode.OK){
+                    if (purchases != null) {
+                        handlePurchases(purchases)
+                    }
+                    GooglePlayBillingPreferences.setPurchased(true)
+                    binding.btnGen40nos.text = "Generate 40's Lines/Rows"
+                }else if(billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED){
+                    GooglePlayBillingPreferences.setPurchased(false)
+                    binding.btnGen40nos.text = "Generate 40's Lines/Rows(Paid Version)"
+                }
             }
 
         billingClient = BillingClient.newBuilder(context)
@@ -106,7 +119,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
             .build()
 
         skulList = ArrayList<String>()
-        skulList.add("Powerball")
+        skulList.add("noadspaidversion_pb_generator")
 
         billingClient.startConnection(object : BillingClientStateListener {
             override fun onBillingSetupFinished(billingResult: BillingResult) {
@@ -986,10 +999,8 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                                             flowPurchase
                                         ).responseCode
                                         if (responseCode == 0) {
-                                            GooglePlayBillingPreferences.setPurchased(
-                                                true
-                                            )
-                                            binding.btnGen40nos.text = "Generate 40's Lines/Rows"
+//                                            GooglePlayBillingPreferences.setPurchased(true)
+//                                            binding.btnGen40nos.text = "Generate 40's Lines/Rows"
                                         }
                                     }
                                 }
@@ -999,7 +1010,7 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
                         override fun onBillingServiceDisconnected() {
                             // Try to restart the connection on the next request to
                             // Google Play by calling the startConnection() method.
-                            GooglePlayBillingPreferences.setPurchased(false)
+//                            GooglePlayBillingPreferences.setPurchased(false)
                         }
                     })
                 }
@@ -4277,4 +4288,22 @@ class PowerballActivity : BaseActivity(), View.OnClickListener {
 
     }
 
+    fun handlePurchases(purchases: List<Purchase>) {
+        for (purchase in purchases) {
+                if (!purchase.isAcknowledged) {
+                    val acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+                        .setPurchaseToken(purchase.purchaseToken)
+                        .build()
+                    billingClient!!.acknowledgePurchase(acknowledgePurchaseParams, ackPurchase)
+                }
+        }
+    }
+    var ackPurchase = AcknowledgePurchaseResponseListener { billingResult ->
+        if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+            GooglePlayBillingPreferences.setPurchased(true)
+            Toast.makeText(applicationContext, "Item Purchased", Toast.LENGTH_SHORT).show()
+            recreate()
+        }
+    }
 }
+

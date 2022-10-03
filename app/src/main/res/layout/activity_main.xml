@@ -40,7 +40,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:singleLine="true"
-            android:text="SELECT MAX NO FOR THE FIRST 5 COLS"
+            android:text="SELECT MAX NO FOR THE FIRST 5 COLUMNS"
             android:textColor="@color/black"
             android:textSize="13sp"
             android:textStyle="bold" />
@@ -80,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="SELECT MAX NO FOR THE 6 COLS"
+            android:text="SELECT MAX NO FOR THE 6 COLUMNS"
             android:textColor="@color/black"
             android:textSize="13sp"
             android:textStyle="bold"
