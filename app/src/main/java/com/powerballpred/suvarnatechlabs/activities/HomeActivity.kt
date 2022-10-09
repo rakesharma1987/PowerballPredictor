@@ -36,7 +36,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.btn_other_app ->{
-                val uri = Uri.parse("https://play.google.com/store/apps/dev?id=7172340817112889805")
+                val uri = Uri.parse("https://play.google.com/store/apps/developer?id=Suvarna+Tech+Lab")
                 val myAppLinkToMarket = Intent(Intent.ACTION_VIEW, uri)
                 try {
                     startActivity(myAppLinkToMarket)
